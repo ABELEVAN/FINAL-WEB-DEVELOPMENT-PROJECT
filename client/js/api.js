@@ -14,7 +14,7 @@ async function fetchFoodListings() {
 
 // Add a new food listing
 async function addFoodListing(foodData) {
-    console.log(foodData);
+    
     try {
         const response = await fetch(`${API_BASE_URL}/food`, {
             method: 'POST',
