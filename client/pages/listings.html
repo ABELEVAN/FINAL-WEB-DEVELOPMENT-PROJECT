@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Browse Listings</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+	<header>
+		<h1>Available Food Listings</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="dashboard.html">Add Food Listing</a>
+		</nav>
+	</header>
+	<main>
+		<!-- Food Listings Section -->
+		<section class="food-listings-section">
+			<h2>Browse Food Listings</h2>
+			<p>Explore surplus food from local businesses and individuals available near you. Click on any listing to
+				claim the food.</p>
+			<div id="foodListings" class="listings-grid">
+				<!-- Dynamic food listings will be injected here by JavaScript -->
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 Food Waste Reduction App. All rights reserved.</p>
+	</footer>
+
+	<script src="../js/api.js"></script>
+	<script src="../js/food.js"></script>
+</body>
+
+</html>

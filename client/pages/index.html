@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Waste Reduction App</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+	<header>
+		<h1>Food Waste Reduction App</h1>
+		<nav>
+			<a href="signup.html">Sign Up</a>
+			<a href="login.html">Login</a>
+			<a href="listings.html">Browse Listings</a>
+		</nav>
+	</header>
+
+	<main>
+		<!-- Hero Section -->
+		<section class="hero">
+			<h2>Reduce Food Waste. Help Your Community.</h2>
+			<p>Connect surplus food from local businesses and individuals to those in need. Together, we can minimize
+				waste and fight hunger.</p>
+			<a href="listings.html" class="btn btn-primary">Browse Food Listings</a>
+		</section>
+
+		<!-- How It Works Section -->
+		<section class="how-it-works">
+			<h2>How It Works</h2>
+			<div class="steps">
+				<div class="step">
+					<h3>1. Sign Up</h3>
+					<p>Create an account to start donating or claiming surplus food.</p>
+				</div>
+				<div class="step">
+					<h3>2. Browse Listings</h3>
+					<p>Find surplus food near you from restaurants, grocery stores, and individuals.</p>
+				</div>
+				<div class="step">
+					<h3>3. Donate or Claim</h3>
+					<p>If you have extra food, post a listing. If you're in need, claim available food items.</p>
+				</div>
+				<div class="step">
+					<h3>4. Pick Up or Arrange Delivery</h3>
+					<p>Coordinate with the donor to pick up the food or arrange delivery.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Featured Food Listings Section -->
+		<section class="featured-listings">
+			<h2>Featured Food Listings</h2>
+			<div id="featuredFoodListings" class="listings-grid">
+				<!-- Dynamic content will be inserted here -->
+			</div>
+		</section>
+
+		<!-- Impact Statistics Section -->
+		<section class="impact-statistics">
+			<h2>Our Impact</h2>
+			<div class="statistics">
+				<div class="stat">
+					<h3>5,000+</h3>
+					<p>Food items donated</p>
+				</div>
+				<div class="stat">
+					<h3>2,500+</h3>
+					<p>Families helped</p>
+				</div>
+				<div class="stat">
+					<h3>10,000+ kg</h3>
+					<p>Food waste reduced</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call to Action Section -->
+		<section class="call-to-action">
+			<h2>Join Us in the Fight Against Food Waste</h2>
+			<p>Start reducing food waste in your community by signing up today!</p>
+			<a href="signup.html" class="btn btn-secondary">Sign Up Now</a>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2024 Food Waste Reduction App. All rights reserved.</p>
+	</footer>
+
+	<!-- Include API and App logic -->
+	<script src="../js/api.js"></script>
+	<script src="../js/app.js"></script>
+	<script>
+		// Fetch and display featured food listings
+		document.addEventListener('DOMContentLoaded', async () => {
+			const foodListings = await fetchFoodListings();
+			const featuredContainer = document.getElementById('featuredFoodListings');
+
+			// Check if the container exists before adding content
+			if (featuredContainer) {
+				// Display up to 3 featured listings
+				const featured = foodListings.slice(0, 3); // Limit to 3 items
+				featured.forEach(listing => {
+					const listingDiv = document.createElement('div');
+					listingDiv.classList.add('listing-item');
+					listingDiv.innerHTML = `
+                        <h3>${listing.food_name}</h3>
+                        <p>${listing.description}</p>
+                        <p><strong>Quantity:</strong> ${listing.quantity}</p>
+                        <p><strong>Expires:</strong> ${listing.expiration_date}</p>
+                    `;
+					featuredContainer.appendChild(listingDiv);
+				});
+			}
+		});
+	</script>
+</body>
+
+</html>

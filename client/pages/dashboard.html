@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard - Add Food</title>
+	<link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+	<header>
+		<h1>Dashboard - Add New Food</h1>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="listings.html">Browse Listings</a>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Add New Food Listing</h2>
+			<form id="addFoodForm">
+				<label for="foodName">Food Name</label>
+				<input type="text" id="foodName" required>
+
+				<label for="description">Description</label>
+				<textarea id="description" required></textarea>
+
+				<label for="quantity">Quantity</label>
+				<input type="number" id="quantity" required>
+
+				<label for="expirationDate">Expiration Date</label>
+				<input type="date" id="expirationDate" required>
+
+				<button type="submit">Add Food</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2024 Food Waste Reduction App. All rights reserved.</p>
+	</footer>
+
+	<script src="../js/api.js"></script>
+	<script src="../js/food.js"></script>
+</body>
+
+</html>
